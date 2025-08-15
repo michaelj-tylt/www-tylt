@@ -33,7 +33,26 @@ export default function HomePage() {
       </div>
 
       {/* Header */}
-      <Header scrolled={false} />
+      <Header scrolled={false}>
+        <a
+          href={process.env.NEXT_PUBLIC_SIDEKICK_URL}
+          className="text-white hover:text-blue-400 transition-colors duration-200 relative text-base"
+        >
+          <span className="relative">Sidekick</span>
+        </a>
+        <a
+          href={process.env.NEXT_PUBLIC_WEBTESTER_URL}
+          className="text-white hover:text-purple-400 transition-colors duration-200 relative text-base"
+        >
+          <span className="relative">WebTester</span>
+        </a>
+        <a
+          href={process.env.NEXT_PUBLIC_AUTOTESTER_URL}
+          className="text-white hover:text-green-400 transition-colors duration-200 relative text-base"
+        >
+          <span className="relative">AutoTester</span>
+        </a>
+      </Header>
       
       {/* Content */}
       <div className="relative z-10 flex flex-col gap-24 sm:gap-32 lg:gap-0">
@@ -230,7 +249,28 @@ export default function HomePage() {
         {/* Footer */}
         <div className="w-full flex items-center justify-center relative text-white snap-start lg:min-h-screen">
           <Section>
-            <Footer />
+            <Footer>
+              <a 
+                href={process.env.NEXT_PUBLIC_SIDEKICK_URL}
+                className="block text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                Sidekick
+              </a>
+              
+              <a 
+                href={process.env.NEXT_PUBLIC_WEBTESTER_URL}
+                className="block text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                WebTester
+              </a>
+              
+              <a 
+                href={process.env.NEXT_PUBLIC_AUTOTESTER_URL}
+                className="block text-green-400 hover:text-green-300 transition-colors"
+              >
+                AutoTester
+              </a>
+            </Footer>
           </Section>
         </div>
       </div>
