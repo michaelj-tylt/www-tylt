@@ -50,13 +50,28 @@ export function Header({ scrolled = false }: HeaderProps) {
           }`}
         >
           <a
-            href="#download"
-            className={`text-white hover:text-orange-400 transition-colors duration-200 relative ${
+            href={process.env.NEXT_PUBLIC_SIDEKICK_URL!}
+            className={`text-blue-400 hover:text-blue-300 transition-colors duration-200 relative ${
               scrolled ? "text-sm" : "text-base"
             }`}
-            onClick={handleDownloadClick}
           >
-            <span className="relative">Download</span>
+            <span className="relative">Sidekick</span>
+          </a>
+          <a
+            href={process.env.NEXT_PUBLIC_WEBTESTER_URL!}
+            className={`text-purple-400 hover:text-purple-300 transition-colors duration-200 relative ${
+              scrolled ? "text-sm" : "text-base"
+            }`}
+          >
+            <span className="relative">WebTester</span>
+          </a>
+          <a
+            href={process.env.NEXT_PUBLIC_AUTOTESTER_URL!}
+            className={`text-green-400 hover:text-green-300 transition-colors duration-200 relative ${
+              scrolled ? "text-sm" : "text-base"
+            }`}
+          >
+            <span className="relative">AutoTester</span>
           </a>
         </nav>
       </div>
