@@ -1,61 +1,43 @@
 'use client';
-import { Header } from '@/shared/header';
+import { PageLayout } from '@/shared/page-layout';
 import { Footer } from '@/shared/footer';
 import { Section } from '@/shared/section';
 import { Hero } from '@/shared/hero-landing';
 // import { DemoRequestContent } from '@/shared/demo-request';
-import PixelBackground from '@/shared/react-bits/Backgrounds/PixelBackground/PixelBackground';
-import Aurora from '@/shared/react-bits/Backgrounds/Aurora/Aurora';
 import { FaWindows, FaApple } from 'react-icons/fa';
 import { SiLinux } from 'react-icons/si';
+import theme from '@/shared/themes/tylt';
 
 export default function HomePage() {
-
   return (
-    <div className="min-h-screen w-full relative overflow-y-scroll snap-mandatory snap-y scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-      {/* Background layers */}
-      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#0a0e1a] to-[#0f172a]" />
-      <div className="fixed inset-0 z-0 opacity-60">
-        <Aurora
-          colorStops={["#5227FF", "#1E40AF", "#0F172A"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-      <div className="fixed inset-0 z-0 opacity-25">
-        <PixelBackground
-          gap={8}
-          speed={60}
-          colors="#5227FF,#3B82F6,#1E3A8A"
-          autoStart={true}
-        />
-      </div>
-
-      {/* Header */}
-      <Header scrolled={false}>
-        <a
-          href={process.env.NEXT_PUBLIC_SIDEKICK_URL}
-          className="text-white hover:text-blue-400 transition-colors duration-200 relative text-base"
-        >
-          <span className="relative">Sidekick</span>
-        </a>
-        <a
-          href={process.env.NEXT_PUBLIC_WEBTESTER_URL}
-          className="text-white hover:text-purple-400 transition-colors duration-200 relative text-base"
-        >
-          <span className="relative">WebTester</span>
-        </a>
-        <a
-          href={process.env.NEXT_PUBLIC_AUTOTESTER_URL}
-          className="text-white hover:text-green-400 transition-colors duration-200 relative text-base"
-        >
-          <span className="relative">AutoTester</span>
-        </a>
-      </Header>
-      
-      {/* Content */}
-      <div className="relative z-10 flex flex-col gap-24 sm:gap-32 lg:gap-0">
+    <PageLayout 
+      homeUrl="/"
+      auroraColors={["#5227FF", "#1E40AF", "#0F172A"]}
+      pixelColors="#5227FF,#3B82F6,#1E3A8A"
+      theme={theme}
+      headerChildren={
+        <>
+          <a
+            href={process.env.NEXT_PUBLIC_SIDEKICK_URL}
+            className={`text-white ${theme.classes.primaryHover} transition-colors duration-200 relative text-base`}
+          >
+            <span className="relative">Sidekick</span>
+          </a>
+          <a
+            href={process.env.NEXT_PUBLIC_WEBTESTER_URL}
+            className={`text-white ${theme.classes.primaryHover} transition-colors duration-200 relative text-base`}
+          >
+            <span className="relative">WebTester</span>
+          </a>
+          <a
+            href={process.env.NEXT_PUBLIC_AUTOTESTER_URL}
+            className={`text-white ${theme.classes.primaryHover} transition-colors duration-200 relative text-base`}
+          >
+            <span className="relative">AutoTester</span>
+          </a>
+        </>
+      }
+    >
         {/* Page 1: Hero */}
         <div 
           className="min-h-screen w-full flex items-center justify-center relative text-white snap-start"
@@ -252,28 +234,27 @@ export default function HomePage() {
             <Footer>
               <a 
                 href={process.env.NEXT_PUBLIC_SIDEKICK_URL}
-                className="block text-blue-400 hover:text-blue-300 transition-colors"
+                className={`block ${theme.classes.primary} ${theme.classes.primaryHover} transition-colors`}
               >
                 Sidekick
               </a>
               
               <a 
                 href={process.env.NEXT_PUBLIC_WEBTESTER_URL}
-                className="block text-purple-400 hover:text-purple-300 transition-colors"
+                className={`block ${theme.classes.primary} ${theme.classes.primaryHover} transition-colors`}
               >
                 WebTester
               </a>
               
               <a 
                 href={process.env.NEXT_PUBLIC_AUTOTESTER_URL}
-                className="block text-green-400 hover:text-green-300 transition-colors"
+                className={`block ${theme.classes.primary} ${theme.classes.primaryHover} transition-colors`}
               >
                 AutoTester
               </a>
             </Footer>
           </Section>
         </div>
-      </div>
-    </div>
+    </PageLayout>
   );
 }
