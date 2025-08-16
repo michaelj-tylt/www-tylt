@@ -2,21 +2,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { usePostHog } from 'posthog-js/react';
+// import { usePostHog } from 'posthog-js/react';
 
 interface HeaderProps {
   scrolled?: boolean;
 }
 
 export function Header({ scrolled = false }: HeaderProps) {
-  const posthog = usePostHog();
+  // const posthog = usePostHog();
 
-  const handleDownloadClick = () => {
-    posthog?.capture('download_button_clicked', {
-      location: 'header',
-      button_text: 'Download'
-    });
-  };
+  // const handleDownloadClick = () => {
+  //   posthog?.capture('download_button_clicked', {
+  //     location: 'header',
+  //     button_text: 'Download'
+  //   });
+  // };
 
   return (
     <header

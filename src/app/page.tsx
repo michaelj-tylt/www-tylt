@@ -2,10 +2,6 @@
 import { PageLayout } from '@/shared/page-layout';
 import { Footer } from '@/shared/footer';
 import { Section } from '@/shared/section';
-import { Hero } from '@/shared/hero-landing';
-// import { DemoRequestContent } from '@/shared/demo-request';
-import { FaWindows, FaApple } from 'react-icons/fa';
-import { SiLinux } from 'react-icons/si';
 import theme from '@/shared/themes/tylt';
 
 export default function HomePage() {
@@ -140,7 +136,7 @@ export default function HomePage() {
                   <div className="space-y-6">
                     {/* Problem 1 */}
                     <div className="space-y-3">
-                      <h3 className="text-xl font-bold text-white">Fake Environments Don't Work</h3>
+                      <h3 className="text-xl font-bold text-white">Fake Environments Don&apos;t Work</h3>
                       <p className="text-base text-zinc-400 leading-relaxed">Headless browsers, simulated environments, and virtual testing don&apos;t reflect real user experiences. You need real desktops with real browsers.</p>
                     </div>
                     
