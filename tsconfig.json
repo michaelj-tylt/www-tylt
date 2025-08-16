@@ -22,7 +22,8 @@
       "@/*": ["./src/*"],
       "@/shared/*": ["./shared-components/components/*"],
       "@/lib/*": ["./shared-components/lib/*"],
-      "@/shared/themes/*": ["./shared-components/themes/*"]
+      "@/shared/themes/*": ["./shared-components/themes/*"],
+      "@/theme": ["./shared-components/themes/tylt"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
